@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="Spraakhjerte.css" />
+    
+</head>
+<body onload="exerciseDiv = document.getElementById('exercise')">
+
+    <div class="header">Header</div>
+    <div class="menu">Menu</div>
+    <div class="wrapper">Description of task here</div>
+    <div class="box"></div>
+    <div class="box picture"></div>
+
+    <div id="exercise">
+        <button onclick="showRandomThings()">
+            Neste oppgave
+        </button></div>
+    
+
+    <p>Samlet poengsumm</p>
+    <div class="scoreboard">
+        <div>
+            Du har <b id="correctCount">0</b> poeng av <b id="totalCount">0</b> mulige.
+        </div>
+    </div>
+
+    <div class="footer"></div>
+    <script src="countScore.js"></script>
+    <script src="showNextExercise.js"></script>
+</body>
+</html>
