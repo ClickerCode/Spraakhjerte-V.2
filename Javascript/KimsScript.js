@@ -36,8 +36,8 @@ function showRandomThings() {
 
     else if (randomNumber < 5) {
         exerciseDiv.innerHTML = `<p>er på høyre side av soffaen? <p> <img src="../paavenstre.jpg"/> 
-                                 <button class="button" onclick = "showCorrect()" > Riktig</button >
-                                 <button class="button2" onclick="showWrong()" >Galt</button>
+                                 <button class="button" onclick = "showWrong()" > Riktig</button >
+                                 <button class="button2" onclick="showCorrect()" >Galt</button>
                                  <button onclick="showRandomThings()">Neste oppgave</button>`;
 
 
