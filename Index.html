@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="Spraakhjerte.css" />
+    <link rel="stylesheet" href="Spraakhjerte-medal.css" />
+</head>
+<body onload="exerciseDiv = document.getElementById('exercise')">
+
+    <div class="header">Header</div>
+    <div class="startButton" onclick="startExerciseCar()">Klikk her for å starte!</div>
+    <div class="nextExercise" onclick="showNextExercise()">Neste oppgave</div>
+    <div class="previousExercise" onclick="previousExercise()">Forrige oppgave</div>
+    <div class="wrapper">Description of task here</div>
+    <div class="box"></div>
+    <div class="box picture"></div>
+
+    <div id="exercise">
+        <button onclick="showNextExercise()">Neste oppgave</button>
+    </div>
+
+    <p>Medaljer du har vunnet!</p>
+
+    <div class="footer"></div>
+    <script src="countScore.js"></script>
+    <script src="showNextExercise.js"></script>
+    <script src="buttonScript.js"></script>
+
+</body>
+</html>
