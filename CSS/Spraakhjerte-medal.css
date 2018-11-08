@@ -1,0 +1,54 @@
+.medal {
+    width: 90px;
+    height: 110px;
+}
+
+.ribbon {
+    width: 70px;
+    height: 60px;
+    margin: 0 auto;
+    position: relative;
+}
+
+    .ribbon:before,
+    .ribbon:after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 100%;
+        top: 0;
+    }
+
+    .ribbon:before {
+        right: 0;
+        background: lightblue;
+        transform: skew(-18deg);
+    }
+
+    .ribbon:after {
+        background: blue;
+        transform: skew(18deg);
+    }
+
+.coin {
+    border: 1px solid #CA5D3E;
+    border-radius: 50%;
+    background: #F0CD73;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: -15px auto 0 auto;
+    box-shadow: 0px 0px 3px 0px #989898;
+}
+
+    .coin:after {
+        content: '';
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        border-radius: inherit;
+        box-shadow: 0 0 0 9px #D9B867;
+    }
