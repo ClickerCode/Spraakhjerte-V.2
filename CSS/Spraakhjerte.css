@@ -218,3 +218,8 @@ body {
     grid-template-areas: 'score' 'score';
     text-align: center;
 }
+#medaljer{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
