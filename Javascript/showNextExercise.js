@@ -17,7 +17,7 @@ function showNextExercise() {
 
 function showCorrect() {
     exerciseDiv.innerHTML += `
-    <div class="alertRight">Congratulation! You answered right!</div>
+    <div class="alertRight">Gratulerer! Du svarte riktig!</div>
         <div class="medal">
             <div class="ribbon"></div>
             <div class="coin"></div>
@@ -27,7 +27,7 @@ function showCorrect() {
 
 function showWrong() {
     exerciseDiv.innerHTML +=
-        '<div class="alertWrong">Sorry. You answered wrong.</div>';
+        '<div class="alertWrong">Beklager. Du svarte feil.</div>';
     countScoreWrong();
 }
 
