@@ -1,12 +1,26 @@
 var exerciseDiv = document.getElementById('exercise');
-
+var currentExercise = 0;
 var exercises = [];
+
+function previousExercise() {
+    currentExercise--;
+    currentExercise = currentExercise < 1 ? 0 : currentExercise;
+    showRandomThings(exercises[currentExercise - 1]);
+}
+
+
 
 function showRandomThings(val) {
     var exerciseDiv = document.getElementById('exercise');
     var randomNumber = val || Math.random() * 8;
+    
 
-    if (typeof val === 'undefined') exercises.push(randomNumber);
+    if (typeof val === 'undefined') {
+        currentExercise++;
+    }
+    if (exercises.length !== currentExercise) {
+        exercises.push(randomNumber);
+    } 
 
     if (randomNumber < 1) {
         exerciseDiv.innerHTML = `<p>Er katten i sofaen<p> <img src = "Bilder/oppaa.jpg" /> 
