@@ -23,34 +23,34 @@ function showRandomThings(val) {
     } 
 
     if (randomNumber < 1) {
-        exerciseDiv.innerHTML = `<p>Er katten i sofaen<p> <img src = "Bilder/oppaa.jpg" /> 
+        exerciseDiv.innerHTML = `<p>Er katten i sofaen<p> <img src = "Bilder/katt/oppaa.jpg" /> 
                                 <button class="button" onclick="showWrong();showRandomThings()">Riktig</button>
                                 <button class="button2" onclick="showCorrect();showRandomThings()">Galt</button>`;
     }
 
     else if (randomNumber < 2) {
-        exerciseDiv.innerHTML = `<p>Er katten på høyre side i sofaen? <p> <img src="Bilder/hyre.png"/> 
+        exerciseDiv.innerHTML = `<p>Er katten på høyre side i sofaen? <p> <img src="Bilder/katt/hyre.png"/> 
                                  <button class="button" onclick = "showCorrect();showRandomThings()"> Riktig</button >
                                  <button class="button2" onclick="showWrong();showRandomThings()" >Galt</button>`;
 
     }
 
     else if (randomNumber < 3) {
-        exerciseDiv.innerHTML = `<p>Er katten på sofaen? <p> <img src="Bilder/over.jpg"/> 
+        exerciseDiv.innerHTML = `<p>Er katten på sofaen? <p> <img src="Bilder/katt/over.jpg"/> 
                                  <button class="button" onclick = "showWrong();showRandomThings()" > Riktig</button >
                                  <button class="button2" onclick="showCorrect();showRandomThings()" >Galt</button>`;
 
     }
 
     else if (randomNumber < 4) {
-        exerciseDiv.innerHTML = `<p>Er katten på sofaen? <p> <img src="Bilder/paa.png"/> 
+        exerciseDiv.innerHTML = `<p>Er katten på sofaen? <p> <img src="Bilder/katt/paa.png"/> 
                                  <button class="button" onclick = "showCorrect();showRandomThings()"> Riktig</button >
                                  <button class="button2" onclick="showWrong();showRandomThings()" >Galt</button>`;
 
     }
 
     else if (randomNumber < 5) {
-        exerciseDiv.innerHTML = `<p>Er på høyre side av sofaen? <p> <img src="Bilder/paavenstre.jpg"/> 
+        exerciseDiv.innerHTML = `<p>Er på høyre side av sofaen? <p> <img src="Bilder/katt/paavenstre.jpg"/> 
                                  <button class="button" onclick = "showWrong();showRandomThings()" > Riktig</button >
                                  <button class="button2" onclick="showCorrect();showRandomThings()" >Galt</button>`;
 
@@ -58,7 +58,7 @@ function showRandomThings(val) {
     }
 
     else if (randomNumber < 6) {
-        exerciseDiv.innerHTML = `<p>Er katten under sofaen? <p> <img src="Bilder/under.jpg"/> 
+        exerciseDiv.innerHTML = `<p>Er katten under sofaen? <p> <img src="Bilder/katt/under.jpg"/> 
                                  <button class="button" onclick = "showCorrect();showRandomThings()"> Riktig</button > 
                                  <button class="button2" onclick="showWrong();showRandomThings()" >Galt</button> `;
 
@@ -66,7 +66,7 @@ function showRandomThings(val) {
     }
 
     else if (randomNumber < 7) {
-        exerciseDiv.innerHTML = `<p>Er katten på høyre siden i sofaen? <p> <img src="Bilder/venstre.png"/> 
+        exerciseDiv.innerHTML = `<p>Er katten på høyre siden i sofaen? <p> <img src="Bilder/katt/venstre.png"/> 
                                  <button class="button" onclick = "showWrong();showRandomThings()"> Riktig</button > 
                                  <button class="button2" onclick="showCorrect();showRandomThings()" >Galt</button> `;
 
