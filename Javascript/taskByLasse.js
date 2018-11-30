@@ -4,7 +4,11 @@ const medalDiv = document.getElementById('medaljer');
 
 // Last inn bildepakke, og lagre i variablen 'oppgaver'
 function lastOppgaver(mappe) {
-    fetch(`/Spraakhjerte-V.2/Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
+    loader(mappe);
+}
+
+function loader(mappe) {
+    fetch(`../Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
 }
 
 // Velg oppgave - enten neste eller forrige
