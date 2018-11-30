@@ -3,7 +3,9 @@ const taskDiv = document.getElementById('task');
 const medalDiv = document.getElementById('medaljer');
 
 // Last inn bildepakke, og lagre i variablen 'oppgaver'
-fetch('../json/oppgaver.json', { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
+function lastOppgaver(mappe) {
+    fetch(`../Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
+}
 
 // Velg oppgave - enten neste eller forrige
 function showTask() {

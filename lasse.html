@@ -15,9 +15,7 @@
     <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
     <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
     <div class="box"></div>
-    <div class="box picture">
-        <!-- Bildet til spør -->
-    </div>
+    <div class="box picture"></div>
 
     <div id="task"></div>
     <div id="medaljer"></div>
@@ -25,6 +23,12 @@
     <div class="footer"></div>
     <script src="Javascript/tasksByLasse.js"></script>
     <script src="Javascript/countScore.js"></script>
+
+    <!-- SCRIPTET HER KAN FJERNES HVIS FORSIDEN TAR OVER BRUKEN AV FUNKSJONEN!! -->
+    <script>
+        // mappe => Bilder/${mappe}/oppgaver.json
+        lastOppgaver('katt'); // mappe = katt
+    </script>
 </body>
 
 </html>
