@@ -1,0 +1,14 @@
+[
+  {
+    "bilde": "liggerhundenforran.png",
+    "tekst": "Ligger hunden foran bilen?"
+  },
+  {
+    "bilde": "sitterhundenbak.png",
+    "tekst": "Er hunden oppå bilen?"
+  },
+  {
+    "bilde": "stårhundenpåbilen.png",
+    "tekst": "Er hunden over bilen?"
+  }
+]
