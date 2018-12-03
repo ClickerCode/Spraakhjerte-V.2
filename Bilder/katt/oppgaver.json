@@ -1,0 +1,25 @@
+[{
+    "bilde": "hyre.png",
+    "tekst": "Er katten på høyre side av sofaen?"
+}, {
+    "bilde": "oppaa.jpg",
+    "tekst": "Er katten oppå sofaen?"
+}, {
+    "bilde": "over.jpg",
+    "tekst": "Er katten over sofaen?"
+}, {
+    "bilde": "paa.png",
+    "tekst": "Er katten på sofaen?"
+}, {
+    "bilde": "paahyre.jpg",
+    "tekst": "Er katten på høyre side i sofaen?"
+}, {
+    "bilde": "paavenstre.jpg",
+    "tekst": "Er katten på venstre side i sofaen?"
+}, {
+    "bilde": "under.jpg",
+    "tekst": "Er katten under sofaen?"
+}, {
+    "bilde": "venstre.png",
+    "tekst": "Er katten på venstre side av sofaen?"
+}]
