@@ -1,0 +1,74 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="CSS/Spraakhjerte.css" />
+    <link rel="stylesheet" href="CSS/Spraakhjerte-pictures.css" />
+    <link rel="stylesheet" href="CSS/Spraakhjerte-medal.css" />
+</head>
+<body>
+<div id="mainPage">
+        <div class="header">Preposisjon Spill</div>
+        <div class="buttonRow" style="display: flex; flex-direction: row">
+            <div>
+                <div><img class="box" src="Bilder/oppaa.jpg" style="width: 500px" onclick="switchPage()" /></div>
+                <div class="nextExercise" style="width: 50%; text-align: justify" onclick="switchPage()">Klikk her for å starte kattespill</div>
+            </div>
+            <div>
+                <div><img class="box2" src="Bilder/oppaa.jpg" style="width: 500px" onclick="switchPage2()" /></div>
+                <div class="nextExercise" style="width: 50%; text-align: justify" onclick="switchPage2()">Klikk her for å starte bilspill</div>
+            </div>
+        </div>
+    </div>
+    <div id="gamePageCat" class="hidePage">
+        <div class="header" onclick="switchPage()">Preposisjons spill</div>
+        <div class="startButton" onclick="reset()">Klikk her for å starte!</div>
+        <div class="nextExercise" onclick="showRandomThings()">Neste oppgave</div>
+        <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
+        <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
+
+        <div id="exercise"></div>
+        <div id="medaljer"></div>
+
+        <div class="footer"></div>
+    </div>
+    <div id="gamePageCar" class="hidePage">
+        <div class="header" onclick="switchPage2()">Preposisjons spill</div>
+        <div class="startButton" onclick="reset()">Klikk her for å starte!</div>
+        <div class="nextExercise" onclick="showRandomThings()">Neste oppgave</div>
+        <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
+        <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
+        <div class="box"></div>
+        <div class="box picture"></div>
+
+        <div id="exercise"></div>
+        <div id="medaljer"></div>
+
+        <div class="footer"></div>
+    </div>
+    <script>
+
+        function switchPage() {
+            document.getElementById('mainPage').classList.toggle('hidePage');
+            document.getElementById('gamePageCat').classList.toggle('hidePage');
+        }
+
+        function switchPage2() {
+            document.getElementById('mainPage').classList.toggle('hidePage');
+            document.getElementById('gamePageCar').classList.toggle('hidePage');
+        }
+    </script>
+
+    <!--<script src="http://test.brustadlasse.no:5500/Javascript/taskByLasse.js"></script>-->
+    <script src="Javascript/playSound.js"></script>
+    <script src="JavascripttaskByLasse.js></script>
+    <!--<script src="Javascript/KimScript.js"></script>-->
+    <!--<script src="Javascript/countScore.js"></script>-->
+
+    <style>
+        .hidePage {
+            display: none;
+        }
+    </style>
+</body>
+</html>
