@@ -1,12 +1,19 @@
+// Kjører denne funksjonen med en gang det kan, og bruker async for å unngå forsinket svar (grunnet 'fetch' som er async)
 !async function() {
     const frontPage = document.getElementById('mainPage');
     let pageList = [];
 
-    // Functions
-    async function hentArray() {
-        let arr;
+    /**
+     * Funksjoner
+     */
+
+    // Hent
+    async function getPageList() {
+        let arr = [];
         await fetch('./bildepakker.json', { cache: 'no-cache' }).then(data=>data.json()).then(obj=>{arr=obj});
-        return arr;
+        pageList = arr;
+        pageList.filter(val => typeof val === 'string');
+        console.log(arr, pageList);
     }
 
     async function forEach() {
@@ -17,16 +24,6 @@
         return html;
     }
 
-    async function getPageList() {
-        let arr = [];
-        await hentArray().then(obj=>{
-            arr = obj;
-            pageList = obj;
-            pageList.filter(val => typeof val === 'string');
-        });
-        console.log(arr, pageList);
-    }
-
     await getPageList();
 
     async function listCode(val) {
@@ -34,22 +31,25 @@
         let img;
         await fetch(`./Bilder/${val}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>{console.log(json[0].bilde);img=json[0].bilde});
         if (typeof img !== 'string') return '';
+        // Knappene med bilde og tekst blir hentet her
         return `
         <div class="list-img" onclick="chooseGame('${val}')">
-            <img src="Bilder/${val}/${img}" alt="${val}">
+            <img src="Bilder/${val}/${img}" alt="${val}" onmouseover="play.voice('${val}')">
         </div>`;
     }
 
+    // Forsidens HTML blir lagd her
     frontPage.innerHTML = `
-        <h1>Forside</h1>
-        <div>${await forEach()}
+        <h1 class="header">Forside</h1>
+        <div class="buttonRow" style="display:flex;flex-direction:row;flex-wrap:wrap">
+            ${await forEach()}
         </div>
     `;
 }()
 
 function chooseGame(game) {
     switchPage();
-    lastOppgaver(game);
+    lastOppgaver(game).then(nextTask);
 }
 
 function switchPage() {

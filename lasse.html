@@ -10,25 +10,17 @@
 
 <body>
     <div id="mainPage">
-        <h1>KJEDELIG, MIDLERTIDIG FORSIDE!</h1>
-        <button onclick="switchPage()">TRYKK HER FOR Å SPILLE</button>
-        <br><br><hr>
-        <div>
-            <p>Lyder ved feil svar også tatt i bruk</p>
-            <p>Automatisk fortsettelse ved svar på siste oppgave (2 sec delay)</p>
-            <p>Lyder ved rett svar funker</p>
-            <p>Linkene til bildene er fikset</p>
-        </div>
+        <!-- innholdet her blir lagd via JavaScript, men viser teksten under hvis JS er deaktivert -->
+        <h1 class="header">Denne nettsiden krever JS (JavaScript) for å fungere, vennligst tillat JS å kjøre på denne nettsiden.</h1>
     </div>
     <div id="gamePage" class="hidePage">
         <div class="header">Preposisjons spill</div>
-        <div class="startButton" onclick="reset()">Klikk her for å starte!</div>
-        <div class="nextExercise" onclick="nextTask()">Neste oppgave</div>
+        <div class="home" onclick="switchPage()">Hjem</div>
+        <div id="nextButton" class="nextExercise" onclick="nextTask()">Neste oppgave</div>
         <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
         <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
         <div class="box"></div>
         <div class="box picture"></div>
-        <div class="home" onclick="switchPage()">Hjem</div>
     
         <div id="task"></div>
         <div id="medaljer"></div>
@@ -42,6 +34,14 @@
     <style>
         .hidePage {
             display: none;
+        }
+
+        .startGame {
+            background-color: darkblue;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 25px;
         }
     </style>
 </body>

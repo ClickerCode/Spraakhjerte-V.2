@@ -7,19 +7,20 @@ const play = {
     wrong()  {
         (new Audio('./lyder/wrong.mp3')).play();
     }
-}
+};
+
+!function() {
+    const script = document.createElement('script');
+    script.src = 'http://code.responsivevoice.org/responsivevoice.js';
+    document.head.appendChild(script);
+    play.voice = (txt, woman = true) => {
+        woman = Boolean(woman); // tvunget til true eller false
+        responsiveVoice.speak(txt, `Norwegian ${woman ? 'Fem' : 'M'}ale`, { rate: 0.9 });
+    };
+}()
 
 /*
 setTimeout(() => {
     (new Audio('./lyder/correct.mp3')).play();
-}, 1e3);
-
-(() => {
-    const script = document.createElement('script');
-    script.src = 'https://rawgithub.com/hiddentao/google-tts/master/google-tts.min.js';
-    document.head.appendChild(script);
-    play.tts = txt => {
-        return (new GoogleTTS('no')).play(txt);
-    };
-})()
+}, 4e3);
 */

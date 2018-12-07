@@ -3,9 +3,9 @@ const taskDiv = document.getElementById('task');
 const medalDiv = document.getElementById('medaljer');
 
 // Last inn bildepakke, og lagre i variablen 'oppgaver'
-function lastOppgaver(mappe) {
-    fetch(`./Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
-    category = mappe;
+async function lastOppgaver(mappe) {
+    await fetch(`./Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
+    return category = mappe;
 }
 
 // Velg oppgave - enten neste eller forrige
@@ -41,6 +41,7 @@ function nextTask() {
         currentTask = (taskHistory.length - 1);
     }
     showTask();
+    play.voice(taskHistory[currentTask].question);
 }
 
 // Forrige oppgave - laster inn forrige oppgave, men stopper på første oppgave
@@ -49,6 +50,7 @@ function previousTask() {
     if (typeof taskHistory[currentTask] === 'undefined') currentTask = 0;
     if (typeof taskHistory[0] === 'undefined') return nextTask();
     showTask();
+    play.voice(taskHistory[currentTask].question);
 }
 
 // Svar - lagre svaret og oppdater HTML koden
