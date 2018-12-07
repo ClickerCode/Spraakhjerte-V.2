@@ -11,7 +11,7 @@ const play = {
 
 !function() {
     const script = document.createElement('script');
-    script.src = 'http://code.responsivevoice.org/responsivevoice.js';
+    script.src = 'Javascript/responsivevoice.js';
     document.head.appendChild(script);
     play.voice = (txt, woman = true) => {
         woman = Boolean(woman); // tvunget til true eller false
