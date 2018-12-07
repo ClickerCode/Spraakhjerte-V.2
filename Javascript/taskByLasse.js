@@ -5,13 +5,14 @@ const medalDiv = document.getElementById('medaljer');
 // Last inn bildepakke, og lagre i variablen 'oppgaver'
 function lastOppgaver(mappe) {
     fetch(`./Bilder/${mappe}/oppgaver.json`, { cache: 'no-cache' }).then(obj=>obj.json()).then(json=>oppgaver=json);
+    category = mappe;
 }
 
 // Velg oppgave - enten neste eller forrige
 function showTask() {
     const obj = taskHistory[currentTask];
     console.log(obj);
-    setHTML(obj.question, obj.img, obj.isCorrect);
+    setHTML(obj.question, obj.img, obj.isCorrect, obj.category);
     if (typeof obj.answered !== 'undefined') {
         taskDiv.innerHTML += `
             <div class="alert${obj.answered ? 'Right' : 'Wrong'}">${obj.answered ? 'Gratulerer! Du svarte riktig!' : 'Beklager! Du svarte feil.'}</div>
@@ -28,7 +29,8 @@ function nextTask() {
         const obj = {
             img: oppgaver[next].bilde,
             question: oppgaver[next].tekst,
-            isCorrect: useCorrectAnswer
+            isCorrect: useCorrectAnswer,
+            category
         };
         if (!useCorrectAnswer) {
             while (obj.question === oppgaver[next].tekst) {
@@ -51,10 +53,21 @@ function previousTask() {
 
 // Svar - lagre svaret og oppdater HTML koden
 function answer(bool) {
-    if (typeof taskHistory[currentTask].answered === 'boolean') return showTask();
-    taskHistory[currentTask].answered = bool;
-    showTask();
-    if (bool) newMedal();
+    if (typeof taskHistory[currentTask].answered === 'boolean') {
+        showTask();
+    } else {
+        taskHistory[currentTask].answered = bool;
+        showTask();
+        if (bool) {
+            newMedal();
+            play.correct();
+        } else {
+            play.wrong();
+        }
+    }
+    if (currentTask === (taskHistory.length - 1)) {
+        setTimeout(() => nextTask(), 2e3);
+    }
 }
 
 // Legg til ny medalje ved rett svar på første forsøk
@@ -77,11 +90,11 @@ function reset() {
 }
 
 // Setter HTML koden som er nødvendig for å vise tekst og bilde
-function setHTML(question, img, isCorrect) {
+function setHTML(question, img, isCorrect, category) {
     taskDiv.innerHTML = `
-<p class="question">${question}</p>
-<img src="Bilder${category ? ('/' + category) : ''}/${img}" alt="${img.split('.')[0]}">
-<button class="button" onclick="answer(${isCorrect})">JA</button>
-<button class="button2" onclick="answer(${!isCorrect})">NEI</button>
-`;
+        <p class="question">${question}</p>
+        <img src="Bilder/${category}/${img}" alt="${img.split('.')[0]}">
+        <button class="button" onclick="answer(${isCorrect})">JA</button>
+        <button class="button2" onclick="answer(${!isCorrect})">NEI</button>
+    `;
 }

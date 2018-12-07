@@ -9,26 +9,40 @@
 </head>
 
 <body>
-    <div class="header">Preposisjons spill</div>
-    <div class="startButton" onclick="reset()">Klikk her for å starte!</div>
-    <div class="nextExercise" onclick="nextTask()">Neste oppgave</div>
-    <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
-    <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
-    <div class="box"></div>
-    <div class="box picture"></div>
+    <div id="mainPage">
+        <h1>KJEDELIG, MIDLERTIDIG FORSIDE!</h1>
+        <button onclick="switchPage()">TRYKK HER FOR Å SPILLE</button>
+        <br><br><hr>
+        <div>
+            <p>Lyder ved feil svar også tatt i bruk</p>
+            <p>Automatisk fortsettelse ved svar på siste oppgave (2 sec delay)</p>
+            <p>Lyder ved rett svar funker</p>
+            <p>Linkene til bildene er fikset</p>
+        </div>
+    </div>
+    <div id="gamePage" class="hidePage">
+        <div class="header" onclick="switchPage()">Preposisjons spill</div>
+        <div class="startButton" onclick="reset()">Klikk her for å starte!</div>
+        <div class="nextExercise" onclick="nextTask()">Neste oppgave</div>
+        <div class="previousExercise" onclick="previousTask()">Forrige oppgave</div>
+        <div class="wrapper">De oppgavene som kommer opp her går ut på å se på bildet, og se om bildet passer beskrivelsen som følger.</div>
+        <div class="box"></div>
+        <div class="box picture"></div>
+    
+        <div id="task"></div>
+        <div id="medaljer"></div>
+    
+        <div class="footer"></div>
+        <script src="Javascript/playSound.js"></script>
+        <script src="Javascript/taskByLasse.js"></script>
+        <script src="Javascript/createFrontpage.js"></script>
+    </div>
 
-    <div id="task"></div>
-    <div id="medaljer"></div>
-
-    <div class="footer"></div>
-    <script src="Javascript/taskByLasse.js"></script>
-    <script src="Javascript/countScore.js"></script>
-
-    <!-- SCRIPTET HER KAN FJERNES HVIS FORSIDEN TAR OVER BRUKEN AV FUNKSJONEN!! -->
-    <script>
-        // mappe => Bilder/${mappe}/oppgaver.json
-        document.body.onload = lastOppgaver('katt'); // mappe = katt
-    </script>
+    <style>
+        .hidePage {
+            display: none;
+        }
+    </style>
 </body>
 
 </html>
