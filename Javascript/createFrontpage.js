@@ -34,7 +34,11 @@
         // Knappene med bilde og tekst blir hentet her
         return `
         <div class="list-img" onclick="chooseGame('${val}')">
-            <img src="Bilder/${val}/${img}" alt="${val}" onmouseover="play.voice('${val}')">
+            <div class="startGame">
+                <img src="Bilder/${val}/${img}" alt="${val}" onmouseover="play.voice('${val}')">
+                <hr>
+                <p>${val}</p>
+            </div>
         </div>`;
     }
 
